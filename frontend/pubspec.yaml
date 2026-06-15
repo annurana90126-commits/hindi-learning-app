@@ -1,0 +1,50 @@
+name: hindi_app
+description: Hindi Language Learning App
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^13.2.0
+
+  # Networking
+  dio: ^5.4.3
+
+  # Local storage
+  flutter_secure_storage: ^9.0.0
+  sqflite: ^2.3.3
+  path: ^1.9.0
+
+  # Audio
+  flutter_sound: ^9.2.13
+  just_audio: ^0.9.39
+  permission_handler: ^11.3.1
+
+  # Fonts (Devanagari)
+  google_fonts: ^6.2.1
+
+  # UI
+  lottie: ^3.1.0
+  cached_network_image: ^3.3.1
+  fl_chart: ^0.68.0
+
+  # Utils
+  intl: ^0.19.0
+  http: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
