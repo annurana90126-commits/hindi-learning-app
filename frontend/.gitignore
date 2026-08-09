@@ -43,3 +43,36 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# =========================
+# Hindi Seekho - Backend
+# =========================
+backend/node_modules/
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# =========================
+# Hindi Seekho - Flutter
+# =========================
+frontend/.dart_tool/
+frontend/build/
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/app/build/
+
+# =========================
+# Android signing - NEVER commit
+# =========================
+frontend/android/key.properties
+frontend/android/*.jks
+frontend/android/*.keystore
+
+# =========================
+# IDE
+# =========================
+.vscode/
+
+# =========================
+# OS
+# =========================
+Thumbs.db

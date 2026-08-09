@@ -1,0 +1,32 @@
+﻿# Node.js
+backend/node_modules/
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Flutter / Dart
+frontend/.dart_tool/
+frontend/.packages
+frontend/.pub/
+frontend/build/
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/app/build/
+
+# Android signing - NEVER commit
+frontend/android/key.properties
+frontend/android/*.jks
+frontend/android/*.keystore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flutter generated
+frontend/linux/flutter/ephemeral/
+frontend/macos/Flutter/ephemeral/
+frontend/windows/flutter/ephemeral/
