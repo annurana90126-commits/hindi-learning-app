@@ -7,7 +7,18 @@ const getLessons = async (req, res, next) => {
   try {
     const lessons = await Lesson.find({ isActive: true }).sort({ order: 1 });
 
-    // Get user progress
+    console.log('📚 TOTAL ACTIVE LESSONS:', lessons.length);
+
+    console.log(
+      '📚 LESSONS:',
+      lessons.map((lesson) => ({
+        id: lesson._id,
+        title: lesson.title,
+        isActive: lesson.isActive,
+        order: lesson.order,
+      }))
+    );
+
     const progress = await UserProgress.findOne({
       userId: req.user._id,
     });
@@ -17,8 +28,6 @@ const getLessons = async (req, res, next) => {
         (lp) => lp.lessonId.toString() === lesson._id.toString()
       );
 
-      // First lesson is always unlocked
-      // Other lessons unlock sequentially
       let status = 'locked';
 
       if (lessonProgress?.completed) {
@@ -51,11 +60,14 @@ const getLessons = async (req, res, next) => {
       };
     });
 
+    console.log('📚 SENDING LESSONS:', lessonsWithStatus.length);
+
     res.status(200).json({
       success: true,
       lessons: lessonsWithStatus,
     });
   } catch (error) {
+    console.error('❌ GET LESSONS ERROR:', error);
     next(error);
   }
 };

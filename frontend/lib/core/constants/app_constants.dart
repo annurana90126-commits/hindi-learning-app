@@ -1,7 +1,9 @@
 class AppConstants {
   // API
-  static const String baseUrl = 'http://10.0.2.2:5000/api';
-  // Note: 10.0.2.2 is how Android emulator accesses localhost
+  static const String baseUrl =
+    'https://hindi-learning-app-production.up.railway.app/api';
+
+  // Note: Railway backend is used in production
 
   // Storage keys
   static const String tokenKey = 'auth_token';

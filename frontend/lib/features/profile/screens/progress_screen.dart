@@ -63,7 +63,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
         children: [
           const Text('😕', style: TextStyle(fontSize: 48)),
           const SizedBox(height: 16),
-          Text('Could not load progress', style: AppTextStyles.heading3),
+          const Text('Could not load progress', style: AppTextStyles.heading3),
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: _loadProgress,
@@ -80,9 +80,9 @@ class _ProgressScreenState extends State<ProgressScreen> {
       padding: const EdgeInsets.fromLTRB(20, 16, 20, 100),
       children: [
         // Header
-        Text('Your Progress', style: AppTextStyles.heading1),
+        const Text('Your Progress', style: AppTextStyles.heading1),
         const SizedBox(height: 4),
-        Text(
+        const Text(
           'Keep going — you\'re doing great!',
           style: AppTextStyles.bodyMedium,
         ),
@@ -177,7 +177,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.secondary.withOpacity(0.3),
+            color: AppColors.secondary.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -201,7 +201,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   Text(
                     _getLevelTitle(stats.level),
                     style: AppTextStyles.bodyMedium.copyWith(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
                 ],
@@ -210,7 +210,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -229,13 +229,13 @@ class _ProgressScreenState extends State<ProgressScreen> {
               Text(
                 '${stats.xp % 200} / ${stats.xpForNextLevel} XP',
                 style: AppTextStyles.bodySmall.copyWith(
-                  color: Colors.white.withOpacity(0.85),
+                  color: Colors.white.withValues(alpha: 0.85),
                 ),
               ),
               Text(
                 'Level ${stats.level + 1} →',
                 style: AppTextStyles.bodySmall.copyWith(
-                  color: Colors.white.withOpacity(0.85),
+                  color: Colors.white.withValues(alpha: 0.85),
                 ),
               ),
             ],
@@ -245,7 +245,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
             borderRadius: BorderRadius.circular(10),
             child: LinearProgressIndicator(
               value: stats.xpProgress,
-              backgroundColor: Colors.white.withOpacity(0.2),
+              backgroundColor: Colors.white.withValues(alpha: 0.2),
               valueColor:
                   const AlwaysStoppedAnimation<Color>(AppColors.accent),
               minHeight: 10,
@@ -265,7 +265,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -331,10 +331,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.warning.withOpacity(0.1),
+        color: AppColors.warning.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppColors.warning.withOpacity(0.4),
+          color: AppColors.warning.withValues(alpha: 0.4),
           width: 1.5,
         ),
       ),
@@ -353,7 +353,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                     color: AppColors.warning,
                   ),
                 ),
-                Text(
+                const Text(
                   'Practice them now to boost your memory',
                   style: AppTextStyles.bodySmall,
                 ),
@@ -408,7 +408,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Achievements', style: AppTextStyles.heading2),
+        const Text('Achievements', style: AppTextStyles.heading2),
         const SizedBox(height: 14),
         GridView.count(
           shrinkWrap: true,
@@ -432,14 +432,14 @@ class _ProgressScreenState extends State<ProgressScreen> {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: a.unlocked
-              ? AppColors.accent.withOpacity(0.5)
+              ? AppColors.accent.withValues(alpha: 0.5)
               : Colors.transparent,
           width: 1.5,
         ),
         boxShadow: a.unlocked
             ? [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 8,
                   offset: const Offset(0, 3),
                 ),
